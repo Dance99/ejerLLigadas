@@ -17,7 +17,7 @@ class linkedlist {
     }
 
     getsize () {
-        //Devuekve el tamaño actual de la lista
+        //Devuelve el tamaño actual de la lista
         return this.size
     }
 
@@ -30,22 +30,22 @@ class linkedlist {
             //.. le nuevo nodo se convierte em la cabeza de la lista
             this.head = node
         } else {
-            node.text = this.head //Apunta al antiguo nodo cabeza
+            node.next = this.head; //Apunta al antiguo nodo cabeza
             this.head = node  // La cabeza ahora  es el nuevo nodo
         }
         this.size++ //incrementa el tamaño de la lista en 1
     }
 
-    //Se agraga el nuevo nodo para el final de la lista 
+    //Se agrega el nuevo nodo para el final de la lista 
     append(value) {
-        const node = new node (value) // crea un nuevo nodo
+        const node = new Node (value) // crea un nuevo nodo
 
         if (this.isEmpety()) {
             this.head = node // si la lista esta vacia sera la cabeza
         } else {
             let curr = this.head
              
-            //rrecorre la lista hasta llegar al ultimo
+            //recorre la lista hasta llegar al ultimo
             while (curr.next !== null) {
                 curr = curr.next
             }
@@ -65,7 +65,7 @@ class linkedlist {
 
             // recorre la lista hasta que curr (nodo actual) sea null
             while (curr) {
-                lisvalue += `${curr.value}` // agrega el valor del nodo actual a la cadena de valores
+                lisvalue += `${curr.value} `; // agrega el valor del nodo actual a la cadena de valores
 
                 curr = curr.next // avanza al siguiente nodo de la lista
 
