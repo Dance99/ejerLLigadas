@@ -40,7 +40,19 @@ class linkedlist {
     append(value) {
         const node = new node (value) // crea un nuevo nodo
 
-        if (this.isEmpety())
+        if (this.isEmpety()) {
+            this.head = node // si la lista esta vacia sera la cabeza
+        } else {
+            let curr = this.head
+             
+            //rrecorre la lista hasta llegar al ultimo
+            while (curr.next !== null) {
+                curr = curr.next
+            }
+            //asigna el nuevo nodo al final de la lista 
+            curr.next = node
+        }
+        this.size++ //incrementa el tamaño
     }
 
     print() {
@@ -71,10 +83,6 @@ const list = new linkedlist()
 console.log('¿Esta vacía la lista?', list.isEmpety())
 console.log(`Tamaño de la lista`, list.getsize())
 
-// list.Prepend(6)
-// list.Prepend(8)
-// list.Prepend(10)
-
 list.print()
 list.Prepend(6)
 list.print()
@@ -83,3 +91,6 @@ list.Prepend(10)
 list.Prepend(14)
 list.Prepend(8)
 list.print()
+
+list.append(100)
+list.print() 
