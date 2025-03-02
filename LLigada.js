@@ -180,17 +180,30 @@ removeTail() {
 
 const list = new linkedlist()
 
-console.log('¿Esta vacía la lista?', list.isEmpety())
-console.log(`Tamaño de la lista`, list.getsize())
+console.log('¿Esta vacía la lista?', list.isEmpety()) //muestra true
+console.log(`Tamaño de la lista`, list.getsize()) //muestra 0
 
-list.print()
-list.Prepend(6)
-list.print()
+list.print(); //muestra lista vacia
 
-list.Prepend(10)
-list.Prepend(14)
-list.Prepend(8)
-list.print()
+list.Prepend(6);
+list.print(); //muestra el 6
 
-list.append(100)
-list.print() 
+list.Prepend(10); 
+list.Prepend(14);
+list.Prepend(8);
+list.print(); //muestra 8,14,10,6.
+
+list.append(100); 
+list.print(); //muestra 8,14,10,6,100
+
+list.insert(200, 3);
+list.print(); //muestra 8,14,10,200,6,100
+
+console.log(`Eliminando cabeza: `, list.removeHead()); //elimina el primer nodo.
+list.print(); //debe aparecer 14,10,200,6,100
+
+console.log(`Eliminando cola: `, list.removeTail()); //Elimina el ultimo nodo
+list.print(); //debe imprimir 14,10,200,6
+
+console.log(`Elimnando nodo en posicion 3: `, list.removeFrom(3));
+list.print(); //debe imprimir 14,10,6
