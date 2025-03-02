@@ -55,6 +55,40 @@ class linkedlist {
         this.size++ //incrementa el tamaño
     }
 
+     //insertar
+     insert(value, index) {
+        //verifica si el indice es invalidado (menor que 0 o(||) mayor qie el tamaño actual de la lista)
+        if (index < 0 || index > this.size) {
+            
+                return; //sale de la función sin hacer nada si el indice es invalido
+            }
+            
+            //si el inidice es 0, usa el metodo prepend para insertar el valor al inicio de la lista.
+            if (index === 0) {
+                this.prepend(value);
+            } else {
+                // crea un nuevo nodo con el valor proporcionado 
+                const node = new Node (value);
+
+                //comienza en la cabeza de la lista
+                let prev = this.head;
+
+                //recoore la lista hasta llegar al nodo anterior a la posicion deseada 
+                for (let i = 0; i < index - 1; i++) {
+                    prev = prev.next;
+                }
+                // ajusta los punteros: el nuevo nodo apunta al siguiente del nodo anterior, 
+                // y el nuevo nodo ahora apunta al nuevo nodo
+                node.next = prev.next;
+                prev.next = node;
+
+                //incrementa el tamaño de la lista para reflejar la inserción 
+                this.size++; 
+            }
+
+
+        } 
+
     print() {
         if (this.isEmpety()) {
             console.log(`lista vacia`) //imprime mensaje de que la lista esta vacia 
