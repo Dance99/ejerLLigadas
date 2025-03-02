@@ -161,7 +161,7 @@ removeTail() {
         } else {
             let curr = this.head //inicia el nodo 
             // variable para almacenar los valores de los nodos 
-            let lisvalue = ``
+            let lisvalue = ``;
 
             // recorre la lista hasta que curr (nodo actual) sea null
             while (curr) {
@@ -178,7 +178,7 @@ removeTail() {
 }
 
 
-const list = new linkedlist()
+const list = new linkedlist();
 
 console.log('¿Esta vacía la lista?', list.isEmpety()) //muestra true
 console.log(`Tamaño de la lista`, list.getsize()) //muestra 0
@@ -199,11 +199,11 @@ list.print(); //muestra 8,14,10,6,100
 list.insert(200, 3);
 list.print(); //muestra 8,14,10,200,6,100
 
-console.log(`Eliminando cabeza: `, list.removeHead()); //elimina el primer nodo.
+console.log(`Eliminando cabeza: `, list.removeHead(), "/n"); //elimina el primer nodo.
 list.print(); //debe aparecer 14,10,200,6,100
 
-console.log(`Eliminando cola: `, list.removeTail()); //Elimina el ultimo nodo
+console.log(`Eliminando cola: `, list.removeTail(), "/n"); //Elimina el ultimo nodo
 list.print(); //debe imprimir 14,10,200,6
 
-console.log(`Elimnando nodo en posicion 3: `, list.removeFrom(3));
+console.log(`Elimnando nodo en posicion 3: `, list.removeFrom(3), "/n");
 list.print(); //debe imprimir 14,10,6
