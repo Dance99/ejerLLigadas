@@ -131,6 +131,30 @@ removeHead() {
     return removeNode.value;
 }
 
+removeTail() {
+    if (this.isEmpety()) return null; // si esta vacia la lista no hay nada que eliminar
+
+    //Caso especial: si solo hay 1 nodo
+    if (this.size === 1) {
+        const removeNode = this.head; //guarda la cabeza
+        this.head = null;       //la lista queda vacia
+        this.size--;
+        return removeNode.value; //Devuelve el valor del nodo eliminado
+    }
+
+    //recorre hasta el penultimo nodo
+    let prev = this.head;
+    while (prev.next.next){
+        prev = prev.next; //avanza al siguiente nodo
+    }
+
+    const removeNode = prev.next; //guarda el nodo final
+    prev.next = null;       //desconecta el ultimo nodo
+    this.size--;
+    return removeNode.value;
+}
+
+
     print() {
         if (this.isEmpety()) {
             console.log(`lista vacia`) //imprime mensaje de que la lista esta vacia 
