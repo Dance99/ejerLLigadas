@@ -122,6 +122,14 @@ removeFrom(index) {
     return removeNode.value; // retorna el valor del nodo eliminado.
 }
 
+// Elimina el promer nodo(Cabeza) y devuelve su valor
+removeHead() {
+    if (this.isEmpety()) return null; //si la lista esta vacia no hay que eliminar
+    const removeNode = this.head; //Guarda la cabeza actual
+    this.head = this.head.next; // La cabeza apunta al siguiente nodo
+    this.size--; 
+    return removeNode.value;
+}
 
     print() {
         if (this.isEmpety()) {
